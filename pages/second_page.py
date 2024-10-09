@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 st.title('Исследование по чаевым')
+st.write('Загрузите файл в боковой панели')
 
 # Функция для проверки соответсвия файла
 def check_file_tips(file):
