@@ -18,13 +18,13 @@ def check_file_tips(file):
     except Exception as e:
         st.error(f"Ошибка при проверке файла: {e}")
 
-uploaded_file = st.sidebar.file_uploader('Загрузите файл tips.csv, находящийся в папке Streamlit_training', type='csv')
+uploaded_file = st.sidebar.file_uploader('Загрузите файл tips.csv', type='csv')
 # Если файл загружен
 if uploaded_file is not None:
     is_valid, df = check_file_tips(uploaded_file)
     # Если функция вернула True
     if is_valid:
-        st.success("Файл успешно загружен и прошел проверку!")
+        st.sidebar.success("Файл успешно загружен и прошел проверку!")
         st.subheader("Первые 5 строк таблицы tips")
         st.dataframe(df.head(5))
 
