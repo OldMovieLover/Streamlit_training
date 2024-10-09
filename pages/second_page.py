@@ -17,7 +17,7 @@ def check_file_tips(file):
         else:
             return False, None
     except Exception as e:
-        st.error(f"Ошибка при проверке файла: {e}")
+        st.sidebar.error(f"Ошибка при проверке файла: {e}")
 
 uploaded_file = st.sidebar.file_uploader('Загрузите файл tips.csv', type='csv')
 # Если файл загружен
@@ -131,6 +131,6 @@ if uploaded_file is not None:
         st.pyplot(fig)
 
     else:
-        st.error("Это неправильный файл. Пожайлуста, загрузите файл tips.csv с правильной структурой")
+        st.sidebar.error("Это неправильный файл. Пожайлуста, загрузите файл tips.csv с правильной структурой")
 else:
     st.sidebar.info("Пожалуйста, загрузите файл tips.csv")
